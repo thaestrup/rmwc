@@ -25,7 +25,7 @@ cd rmwc && npm i
 As of V5, RMWC has been rebuilt in Typescript which makes the developer experience much easier to navigate. `material-components-web` converted to Typescript as well which allows for a very robust and tight integration.
 
 - Storybook is used for developing components in isolation, but the docs can be used for development as well
-- The README.md in the docs are automatically generated at release time from the Typescript readme.tsx files. DO NOT UPDATE a generated-*.json, or a README.md file fro a component manually
+- The README.md in the docs are automatically generated at release time from the Typescript readme.tsx files. DO NOT UPDATE a generated-*.json, or a README.md file from a component manually
 
 ```jsx
 class DocsExample {
@@ -131,6 +131,9 @@ If you've done some experimental work on your branch/fork and committed these vi
 Finally, it helps to make sure that your branch/fork is up to date with what's currently on master. You can ensure this by running `git pull --rebase origin master` on your branch.
 
 > **NOTE**: Please do _not merge_ master into your branch. _Always_ `pull --rebase` instead. This ensures a linear history by always putting the work you've done after the work that's already on master, regardless of the date in which those commits were made.
+
+### Other considerations
+- After you install a dependency you need to rerun `npm install`. It’s a quirk of using Lerna. It needs to rebootstrap anytime the dependencies change.
 
 ### Archiving older versions of the docs
 This is mainly a cheat sheet for the maintainers. Its a manual process, but only happens on major releases.
